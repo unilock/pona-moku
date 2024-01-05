@@ -1,9 +1,11 @@
 package io.github.nalathnidragon.pona_moku.mixin;
 
 import net.minecraft.client.gui.hud.InGameHud;
-import net.minecraft.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.*;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Constant;
+import org.spongepowered.asm.mixin.injection.ModifyConstant;
+import org.spongepowered.asm.mixin.injection.Slice;
 
 @Mixin(InGameHud.class)
 public abstract class InGameHudMixin {

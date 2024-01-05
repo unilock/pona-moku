@@ -1,13 +1,11 @@
 package io.github.nalathnidragon.pona_moku.mixin;
 
 import io.github.nalathnidragon.pona_moku.FoodProcessor;
-import io.github.nalathnidragon.pona_moku.PonaMoku;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Item.class)

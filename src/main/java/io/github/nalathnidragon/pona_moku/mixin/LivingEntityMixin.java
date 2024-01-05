@@ -4,7 +4,6 @@ import io.github.nalathnidragon.pona_moku.FoodProcessor;
 import io.github.nalathnidragon.pona_moku.config.PonaMokuConfig;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,7 +24,7 @@ public abstract class LivingEntityMixin {
 	@Shadow
 	public abstract void stopUsingItem();
 
-	@Inject(method = "applyFoodEffects", at = @At("HEAD"), cancellable=true)
+	@Inject(method = "applyFoodEffects", at = @At("HEAD"))
 	private void applyFoodHealing(ItemStack stack, World world, LivingEntity targetEntity, CallbackInfo ci) {
 		FoodProcessor.clearFoodEffects(targetEntity);
 		FoodProcessor.applyFoodHealthToEntity(stack.getItem(),targetEntity);

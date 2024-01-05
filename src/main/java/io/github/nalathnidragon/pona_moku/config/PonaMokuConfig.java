@@ -1,13 +1,9 @@
 package io.github.nalathnidragon.pona_moku.config;
 
-import com.sun.jna.platform.win32.COM.util.annotation.ComInterface;
 import io.github.nalathnidragon.pona_moku.PonaMoku;
 import org.quiltmc.config.api.ReflectiveConfig;
 import org.quiltmc.config.api.annotations.Comment;
-import org.quiltmc.config.api.annotations.FloatRange;
 import org.quiltmc.config.api.values.TrackedValue;
-import org.quiltmc.config.api.values.ValueList;
-import org.quiltmc.config.api.values.ValueMap;
 import org.quiltmc.loader.api.config.v2.QuiltConfig;
 
 public final class PonaMokuConfig extends ReflectiveConfig {
