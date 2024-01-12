@@ -30,7 +30,7 @@ public abstract class ItemStackMixin {
 	@Shadow
 	public abstract int getMaxUseTime();
 
-	@Inject(method = "getTooltip", at = @At("RETURN"), cancellable = true)
+	@Inject(method = "getTooltip", at = @At("RETURN"))
 	public void appendHealth(PlayerEntity player, TooltipContext context, CallbackInfoReturnable<List<Text>> cir){
 		List<Text> list = cir.getReturnValue();
 		if(this.isFood())
@@ -58,6 +58,5 @@ public abstract class ItemStackMixin {
 				list.add(label);
 			}
 		}
-		cir.setReturnValue(list);
 	}
 }
