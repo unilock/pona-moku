@@ -49,6 +49,6 @@ public abstract class HungerManagerMixin {
 	@Inject(method = "getSaturationLevel", at = @At("RETURN"), cancellable = true)
 	private void pona_moku$fakeSaturationLevel(CallbackInfoReturnable<Float> cir)
 	{
-		cir.setReturnValue(5.0F);
+		cir.setReturnValue(0.0F);
 	}
 }
