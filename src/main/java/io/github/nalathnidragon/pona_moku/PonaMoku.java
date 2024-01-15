@@ -2,8 +2,7 @@ package io.github.nalathnidragon.pona_moku;
 
 import io.github.nalathnidragon.pona_moku.config.FoodStatusConfig;
 import io.github.nalathnidragon.pona_moku.config.PonaMokuConfig;
-import org.quiltmc.loader.api.ModContainer;
-import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
+import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +12,7 @@ public class PonaMoku implements ModInitializer {
 	public static final PonaMokuConfig config = PonaMokuConfig.instance;
 
 	@Override
-	public void onInitialize(ModContainer mod) {
+	public void onInitialize() {
 		FoodStatusConfig.loadConfig();
 	}
 }

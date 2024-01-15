@@ -1,19 +1,25 @@
 package io.github.nalathnidragon.pona_moku.config;
 
+import folk.sisby.kaleido.lib.nightconfig.core.CommentedConfig;
+import folk.sisby.kaleido.lib.nightconfig.core.Config;
+import folk.sisby.kaleido.lib.nightconfig.toml.TomlFormat;
+import folk.sisby.kaleido.lib.nightconfig.toml.TomlParser;
 import io.github.nalathnidragon.pona_moku.PonaMoku;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.ModContainer;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import org.quiltmc.loader.api.ModContainer;
-import org.quiltmc.loader.api.QuiltLoader;
-import org.quiltmc.loader.impl.lib.electronwill.nightconfig.core.CommentedConfig;
-import org.quiltmc.loader.impl.lib.electronwill.nightconfig.core.Config;
-import org.quiltmc.loader.impl.lib.electronwill.nightconfig.toml.TomlFormat;
-import org.quiltmc.loader.impl.lib.electronwill.nightconfig.toml.TomlParser;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,10 +34,10 @@ public abstract class FoodStatusConfig {
 	public static boolean loadConfig() {
 		foodStatus = null; // mark foodStatus for reconstruction
 
-		ModContainer ponamoku = QuiltLoader.getModContainer(PonaMoku.MODID).get();
+		ModContainer ponamoku = FabricLoader.getInstance().getModContainer(PonaMoku.MODID).get();
 		try {
 			File file = new File(
-				QuiltLoader.getConfigDir().toFile() + File.separator + PonaMoku.MODID,
+				FabricLoader.getInstance().getConfigDir().toFile() + File.separator + PonaMoku.MODID,
 				"food_status_effects.toml"
 			);
 

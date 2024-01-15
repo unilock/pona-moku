@@ -1,5 +1,6 @@
 package io.github.nalathnidragon.pona_moku;
 
+import folk.sisby.kaleido.lib.quiltconfig.api.Config;
 import io.github.nalathnidragon.pona_moku.config.FoodStatusConfig;
 import io.github.nalathnidragon.pona_moku.config.PonaMokuConfig;
 import io.github.nalathnidragon.pona_moku.mixin.HiddenEffectAccessorMixin;
@@ -14,7 +15,6 @@ import net.minecraft.item.Items;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import org.quiltmc.config.api.Config;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -52,12 +52,12 @@ public class FoodProcessor {
 	public static void reloadConfig()
 	{
 		staticFoodBuffs = FoodStatusConfig.getFoodStatus();
-		HEALTH_SCALE = PonaMokuConfig.instance.health_scale.value();
-		ABSORPTION_SCALE = PonaMokuConfig.instance.absorption_scale.value();
-		MAX_ABSORPTION_FROM_FOOD = PonaMokuConfig.instance.max_absorption_from_food.value();
-		MIN_EAT_TIME = PonaMokuConfig.instance.min_eat_time.value();
-		EAT_TIME_PER_ABSORPTION = PonaMokuConfig.instance.eat_time_per_absorption.value();
-		EAT_TIME_PER_HEAL = PonaMokuConfig.instance.eat_time_per_health.value();
+		HEALTH_SCALE = PonaMokuConfig.instance.health_scale;
+		ABSORPTION_SCALE = PonaMokuConfig.instance.absorption_scale;
+		MAX_ABSORPTION_FROM_FOOD = PonaMokuConfig.instance.max_absorption_from_food;
+		MIN_EAT_TIME = PonaMokuConfig.instance.min_eat_time;
+		EAT_TIME_PER_ABSORPTION = PonaMokuConfig.instance.eat_time_per_absorption;
+		EAT_TIME_PER_HEAL = PonaMokuConfig.instance.eat_time_per_health;
 	}
 
 	public static Collection<StatusEffectInstance> getStatusInstancesFrom(ItemStack stack){
@@ -67,7 +67,7 @@ public class FoodProcessor {
 		if(staticEffects != null){
 			for(StatusEffect s:staticEffects.keySet())
 			{
-				if(staticEffects.get(s) >= 0) statuses.add(new StatusEffectInstance(s, StatusEffectInstance.INFINITE_DURATION,staticEffects.get(s),true,true));
+				if(staticEffects.get(s) >= 0) statuses.add(new StatusEffectInstance(s, StatusEffectInstance.INFINITE,staticEffects.get(s),true,true));
 			}
 		}
 		return statuses;

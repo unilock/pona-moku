@@ -34,7 +34,7 @@ public abstract class LivingEntityMixin {
 	@Inject(method="damage",at=@At("HEAD"))
 	private void interruptEating(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir)
 	{
-		float threshold = PonaMokuConfig.instance.interrupt_eating_threshold.value();
+		float threshold = PonaMokuConfig.instance.interrupt_eating_threshold;
 		if(threshold == 0) return;
 		if(amount >= threshold && isUsingItem() && getActiveItem().isFood()) stopUsingItem();
 	}

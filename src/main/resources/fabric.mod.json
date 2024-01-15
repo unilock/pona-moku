@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "pona_moku",
+	"version": "${version}",
+	"name": "pona moku",
+	"description": "Replacing Minecraft's hunger system with something more interesting.",
+	"authors": [
+		"NalathniDragon (Owner)"
+	],
+	"contributors": [
+		"unilock (Fabric)"
+	],
+	"contact": {
+		"sources": "https://github.com/NalathniDragon/pona-moku",
+		"issues": "https://github.com/NalathniDragon/pona-moku/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/pona_moku/pona_moku.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.github.nalathnidragon.pona_moku.PonaMoku"
+		]
+	},
+	"mixins": [
+		"pona_moku.mixins.json"
+	],
+	"depends": {
+		"fabricloader": "*",
+		"minecraft": ">=1.20",
+		"fabric-api": "*"
+	}
+}

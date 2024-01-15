@@ -13,7 +13,7 @@ public abstract class PlayerEntityMixin{
 	//TODO temporary fix to allow always consuming for testing purposes, this check actually needs to be handled elsewhere
 	@Inject(method = "canConsume", at = @At("HEAD"), cancellable=true)
 	public void overrideConsume(boolean ignoreHunger, CallbackInfoReturnable<Boolean> cir) {
-		if(PonaMokuConfig.instance.nausea_prevents_eating.value()) {
+		if(PonaMokuConfig.instance.nausea_prevents_eating) {
 			cir.setReturnValue(!((PlayerEntity) (Object) this).hasStatusEffect(StatusEffects.NAUSEA));
 		}
 		else {

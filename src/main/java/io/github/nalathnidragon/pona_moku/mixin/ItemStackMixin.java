@@ -54,7 +54,7 @@ public abstract class ItemStackMixin {
 				if(amplifier>0) label= label.append(" ").append(Text.translatable("potion.potency." +amplifier));
 
 				if(amplifier<0) label=Text.literal("As ingredient: ").append(label).formatted(Formatting.ITALIC,Formatting.DARK_GRAY);
-				else label=label.formatted(status.getType().getFormatting());
+				else label=label.formatted(status.getCategory().getFormatting());
 				list.add(label);
 			}
 		}
