@@ -45,16 +45,16 @@ public final class PonaMokuConfig extends WrappedConfig {
 	public final ValueList<Double> test2 = ValueList.create(0.0, 1.0, -2.0);
 
 	@Comment("Test Map")
-	public final ValueMap<Integer> test3 = value(ValueMap
+	public final ValueMap<Integer> test3 = ValueMap
 		.builder(0) // default value
 		.put("one", 1)
 		.put("two", 2)
 		.put("three", 3)
-		.build());
+		.build();
 
 	// Note: Default values aren't automatically used.
-	// test2..get(5) will throw an indexOutOfBoundsException
-	// test3..get("five") evaluates to null
+	// test2.get(5) will throw an indexOutOfBoundsException
+	// test3.get("five") evaluates to null
 
 	public final GeneralConfig general = new GeneralConfig();
 
