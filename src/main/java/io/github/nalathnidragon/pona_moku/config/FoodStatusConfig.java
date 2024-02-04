@@ -1,9 +1,9 @@
 package io.github.nalathnidragon.pona_moku.config;
 
-import folk.sisby.kaleido.lib.nightconfig.core.CommentedConfig;
-import folk.sisby.kaleido.lib.nightconfig.core.Config;
-import folk.sisby.kaleido.lib.nightconfig.toml.TomlFormat;
-import folk.sisby.kaleido.lib.nightconfig.toml.TomlParser;
+import com.electronwill.nightconfig.core.CommentedConfig;
+import com.electronwill.nightconfig.core.Config;
+import com.electronwill.nightconfig.toml.TomlFormat;
+import com.electronwill.nightconfig.toml.TomlParser;
 import io.github.nalathnidragon.pona_moku.PonaMoku;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
